@@ -1,0 +1,80 @@
+@import "tailwindcss";
+
+@theme inline {
+  /* neutrals */
+  --color-white: #f5f3ee;
+  --color-concrete: #b8b2a7;
+  --color-concrete-dark: #7d766c;
+  --color-charcoal: #26241f;
+  --color-black: #0b0a09;
+
+  /* accents — used sparingly, sampled from brand poster */
+  --color-red: #9c2b26;
+  --color-burnt: #cf5b28;
+  --color-gold: #c9a24b;
+  --color-yellow: #e8b430;
+
+  /* type */
+  --font-display: var(--font-archivo);
+  --font-body: var(--font-inter);
+  --font-mono: var(--font-jetbrains-mono);
+}
+
+html {
+  background-color: var(--color-black);
+  scroll-behavior: auto;
+}
+
+body {
+  background-color: var(--color-black);
+  color: var(--color-white);
+  overscroll-behavior: none;
+}
+
+::selection {
+  background-color: var(--color-red);
+  color: var(--color-white);
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-black);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-concrete-dark);
+}
+
+/* Fixed grain texture, used across the whole page for a filmic feel */
+@keyframes noise-shift {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+  10% {
+    transform: translate3d(-2%, -3%, 0);
+  }
+  30% {
+    transform: translate3d(3%, 2%, 0);
+  }
+  50% {
+    transform: translate3d(-1%, 3%, 0);
+  }
+  70% {
+    transform: translate3d(2%, -2%, 0);
+  }
+  90% {
+    transform: translate3d(-3%, 1%, 0);
+  }
+}
+
+[data-reduced-motion="true"] .noise-layer {
+  animation: none !important;
+}
+
+[data-reduced-motion="true"] {
+  scroll-behavior: smooth;
+}
