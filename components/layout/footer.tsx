@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { navLinks } from "@/data/nav";
 
@@ -42,6 +43,25 @@ export function Footer() {
       <div className="mx-auto mt-16 flex max-w-6xl flex-col gap-4 border-t border-white/10 pt-8 font-mono text-[10px] uppercase tracking-[0.2em] text-white/40 md:flex-row md:items-center md:justify-between">
         <span>© {new Date().getFullYear()} JCM Home Builders. All rights reserved.</span>
         <span>Forward by design. Built with purpose.</span>
+        <a
+          href="https://www.aequoradigital.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+          data-cursor="link"
+          className="flex items-center gap-2 normal-case tracking-normal text-white/40 transition-colors hover:text-white"
+        >
+          Designed &amp; developed by
+          <span className="relative h-5 w-5 shrink-0">
+            <Image
+              src="/images/Aequora-digital-logo.png"
+              alt="Aequora Digital"
+              fill
+              sizes="20px"
+              className="object-contain"
+            />
+          </span>
+          <span className="text-white/60">Aequora Digital</span>
+        </a>
       </div>
     </footer>
   );
