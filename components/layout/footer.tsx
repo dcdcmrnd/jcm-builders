@@ -29,13 +29,13 @@ export function Footer() {
             ))}
           </div>
           <div className="flex flex-col gap-3 font-mono text-xs uppercase tracking-[0.15em] text-white/70">
-            <a href="mailto:hello@jcmhomebuilders.com" data-cursor="link" className="hover:text-white">
-              hello@jcmhomebuilders.com
+            <a href="mailto:jcmconstruction2020@gmail.com" data-cursor="link" className="hover:text-white">
+              jcmconstruction2020@gmail.com
             </a>
-            <a href="tel:+10000000000" data-cursor="link" className="hover:text-white">
-              +1 (000) 000-0000
+            <a href="tel:+639165384494" data-cursor="link" className="hover:text-white">
+              0916 538 4494
             </a>
-            <span>Licensed &amp; Insured</span>
+            <span>Davao City, Philippines</span>
           </div>
         </div>
       </div>

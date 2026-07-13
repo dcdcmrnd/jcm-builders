@@ -43,7 +43,7 @@ export function Testimonials() {
 
       <div ref={containerRef} className="relative overflow-hidden">
         <motion.div
-          drag="x"
+          drag={testimonials.length > 1 ? "x" : false}
           style={{ x }}
           dragConstraints={{ left: -(testimonials.length - 1) * width, right: 0 }}
           dragElastic={0.1}
@@ -53,7 +53,7 @@ export function Testimonials() {
             const index = Math.round(-x.get() / container.offsetWidth);
             goTo(index);
           }}
-          className="flex cursor-grab active:cursor-grabbing"
+          className={`flex ${testimonials.length > 1 ? "cursor-grab active:cursor-grabbing" : ""}`}
         >
           {testimonials.map((testimonial) => (
             <div key={testimonial.name} className="w-full shrink-0 pr-6">
@@ -81,23 +81,25 @@ export function Testimonials() {
         </motion.div>
       </div>
 
-      <div className="mt-10 flex gap-2">
-        {testimonials.map((testimonial, index) => (
-          <button
-            key={testimonial.name}
-            type="button"
-            aria-label={`Go to testimonial ${index + 1}`}
-            onClick={() => goTo(index)}
-            className="flex h-6 w-8 items-center justify-center"
-          >
-            <span
-              className={`h-1.5 rounded-full transition-all ${
-                index === active ? "w-8 bg-white" : "w-1.5 bg-white/30"
-              }`}
-            />
-          </button>
-        ))}
-      </div>
+      {testimonials.length > 1 && (
+        <div className="mt-10 flex gap-2">
+          {testimonials.map((testimonial, index) => (
+            <button
+              key={testimonial.name}
+              type="button"
+              aria-label={`Go to testimonial ${index + 1}`}
+              onClick={() => goTo(index)}
+              className="flex h-6 w-8 items-center justify-center"
+            >
+              <span
+                className={`h-1.5 rounded-full transition-all ${
+                  index === active ? "w-8 bg-white" : "w-1.5 bg-white/30"
+                }`}
+              />
+            </button>
+          ))}
+        </div>
+      )}
     </section>
   );
 }

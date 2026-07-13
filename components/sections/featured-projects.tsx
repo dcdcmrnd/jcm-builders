@@ -78,7 +78,7 @@ export function FeaturedProjects() {
           >
             <div className="relative aspect-[4/5] w-full overflow-hidden bg-charcoal">
               <Image
-                src={project.image}
+                src={project.images[0]}
                 alt={project.title}
                 fill
                 sizes="(min-width: 768px) 34vw, 82vw"
