@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Archivo, Inter, JetBrains_Mono } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
 import { MotionConfig } from "motion/react";
 import { SmoothScrollProvider } from "@/components/providers/smooth-scroll-provider";
 import { PageLoader } from "@/components/layout/page-loader";
@@ -69,6 +70,7 @@ export default function RootLayout({
             </PageLoader>
           </SmoothScrollProvider>
         </MotionConfig>
+        <Analytics />
       </body>
     </html>
   );
